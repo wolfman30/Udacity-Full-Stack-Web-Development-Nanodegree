@@ -28,3 +28,5 @@ SELECT CASE
 FROM log 
 GROUP BY 1 
 ORDER BY number_of_views DESC;
+
+(5) 
