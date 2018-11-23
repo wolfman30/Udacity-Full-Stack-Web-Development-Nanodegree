@@ -2,6 +2,7 @@
 Python 3 used in this project 
 
 Setup Steps: 
+
 (1) Make sure newsdata.sql is in current working directory
 
 (2) Run 'psql -d news -f newsdata.sql' to create news database
