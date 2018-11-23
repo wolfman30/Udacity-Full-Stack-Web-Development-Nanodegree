@@ -11,7 +11,7 @@ Setup Steps:
 
 (4) Create the two views below:
 
-       Creates View titled 'authors_articles':
+Creates View titled 'authors_articles':
 
        CREATE VIEW authors_articles AS
        SELECT authors.name, articles.title 
