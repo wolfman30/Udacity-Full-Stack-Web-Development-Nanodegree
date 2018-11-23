@@ -10,6 +10,7 @@ Indexes:
 Referenced by:
     TABLE "articles" CONSTRAINT "articles_author_fkey" FOREIGN KEY (author) REFERENCES authors(id)
 
+
 ARTICLES
 
                                   Table "public.articles"
@@ -27,6 +28,7 @@ Indexes:
     "articles_slug_key" UNIQUE CONSTRAINT, btree (slug)
 Foreign-key constraints:
     "articles_author_fkey" FOREIGN KEY (author) REFERENCES authors(id)
+
 
 LOG
                                   Table "public.log"
