@@ -1,4 +1,6 @@
 ﻿
+Python 3 used in this project 
+
 Setup Steps: 
 (1) Make sure newsdata.sql is in current working directory
 (2) Run 'psql -d news -f newsdata.sql' to create news database
@@ -29,4 +31,4 @@ FROM log
 GROUP BY 1 
 ORDER BY number_of_views DESC;
 
-(5) 
+(5)Run 'python newer_newsdata_to_be_graded.py' in terminal assuming the file is in the current working directory  
