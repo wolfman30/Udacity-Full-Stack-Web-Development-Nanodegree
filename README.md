@@ -3,10 +3,8 @@ Python 3 used in this project
 
 Setup Steps: 
 
-(1) Install Linux Virtual Machine on local computer by installing these two software packages: 
-       
+(1) Install Linux Virtual Machine on local computer by installing these two software packages: \
        a. [virtualbox](https://www.virtualbox.org/wiki/Downloads)
-       
        b. [vagrantup](https://www.vagrantup.com/downloads.html)
 
 (2) Download [newsdata.sql](https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip), unzip, and store newsdata.sql in the vagrant folder in the virtual machine. 
