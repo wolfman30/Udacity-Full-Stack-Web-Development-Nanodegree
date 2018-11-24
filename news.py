@@ -58,8 +58,11 @@ class Newsdata():
     def __init__(self):
 
         #connects to database "news"
-        self.db = psy.connect(database="news")
-        
+        try:
+            self.db = psy.connect(database="news")
+        execpt psy.DatabaseError, e: 
+            print("Could not connect to the database 'news'")
+
         #sets up the database for executing queries and fetching the output 
         self.c = self.db.cursor() 
 
