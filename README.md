@@ -6,39 +6,45 @@ Setup Steps:
 (1) Install Linux Virtual Machine on local computer by installing these two software packages: \
        a. [virtualbox](https://www.virtualbox.org/wiki/Downloads) \
        b. [vagrantup](https://www.vagrantup.com/downloads.html)
+ 
+(2) It is recommended to have a Unix-style terminal such as Git Bash, so install that too. 
 
-(2) Download [newsdata.sql](https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip), unzip, and store newsdata.sql in the vagrant folder in the virtual machine. 
+(3) From the terminal, make a new directory called 'networking' and to activate the vagrant program, run with these commands:
+              
+              mkdir networking
+              cd networking
+              vagrant init ubuntu/trusty64
+              vagrant up
+              
+(4) This previous step could take awhile depending on internet connection. When complete, run:
 
-Make sure newsdata.sql is in current working directory
+              vagrant ssh
+    
+This connects to the vagrant virtual machine.
+              
+(5) Run:
+       
+       sudo apt-get update && sudo apt-get upgrade
 
-(2) Run 'psql -d news -f newsdata.sql' to create news database
+This makes sure everything is up to date. 
 
-(3) Run 'psql -d news' to connect to news database
+(6) Run: 
 
-(4) Create the two views below:
+       cd /vagrant
 
-Creates View titled 'authors_articles':
+(7) Download [newsdata.sql](https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip), unzip, and store newsdata.sql in the vagrant folder in the virtual machine. 
 
-       CREATE VIEW authors_articles AS
-       SELECT authors.name, articles.title 
-       FROM authors, articles
-       WHERE articles.author=authors.id; 
+(8) Run: 
+
+       psql -d news -f newsdata.sql' to create news database
+
+(3) Run: 
+
+       psql -d news' 
+to connect to the news database
 
 
-Creates View titled 'articles_views":
-
-       CREATE VIEW articles_views AS
-       SELECT CASE
-              WHEN path LIKE '%bad-things%' THEN 'Bad things gone, say good people' 
-              WHEN path LIKE '%balloon-goons%' THEN 'Balloon goons doomed' 
-              WHEN path LIKE '%bears-love-berries%' THEN 'Bears love berries, alleges bear' 
-              WHEN path LIKE '%candidate%' THEN 'Candidate is jerk, alleges rival' 
-              WHEN path LIKE '%goats-eat%' THEN 'Goats eat Google''s lawn' 
-              WHEN path LIKE'%media-obsessed%' THEN 'Media obsessed with bears' 
-              WHEN path LIKE '%trouble-for%' THEN 'Trouble for troubled troublemakers' 
-              WHEN path LIKE '%there-are%' THEN 'There are a lot of bears' END AS article_title, count(*) number_of_views 
-       FROM log 
-       GROUP BY 1 
-       ORDER BY number_of_views DESC;
-
-(5)Run 'python newer_newsdata_to_be_graded.py' in terminal assuming the file is in the current working directory  
+(5)Run: 
+       
+       python news.py 
+         
