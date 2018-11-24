@@ -7,7 +7,7 @@ Setup Steps:
        a. https://www.virtualbox.org/wiki/Downloads
        b. https://www.vagrantup.com/downloads.html
 
-(2) Download newsdata.sql, unzip, and store in the vagrant folder in the virtual machine. 
+(2) Download (https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip), unzip, and store newsdata.sql in the vagrant folder in the virtual machine. 
 
 Make sure newsdata.sql is in current working directory
 
