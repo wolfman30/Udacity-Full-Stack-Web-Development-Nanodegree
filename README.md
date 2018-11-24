@@ -4,8 +4,8 @@ Python 3 used in this project
 Setup Steps: 
 
 (1) Install Linux Virtual Machine on local computer by installing these two software packages: \
-       a. [virtualbox](https://www.virtualbox.org/wiki/Downloads) \
-       b. [vagrantup](https://www.vagrantup.com/downloads.html)
+a. [virtualbox](https://www.virtualbox.org/wiki/Downloads) 
+b. [vagrantup](https://www.vagrantup.com/downloads.html) 
  
 (2) It is recommended to have a Unix-style terminal such as Git Bash, so install that too. 
 
